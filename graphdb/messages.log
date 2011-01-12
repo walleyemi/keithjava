@@ -1,0 +1,42 @@
+Mon Jan 10 18:43:35 PST 2011: Creating new db @ graphdb/neostore
+Mon Jan 10 18:43:35 PST 2011: Opened [graphdb/nioneo_logical.log.1] clean empty log, version=0
+Mon Jan 10 18:43:35 PST 2011: Opened [graphdb/lucene/lucene.log.1] clean empty log, version=0
+Mon Jan 10 18:43:35 PST 2011: Opened [graphdb/lucene-fulltext/lucene.log.1] clean empty log, version=0
+Mon Jan 10 18:43:35 PST 2011: Extension org.neo4j.kernel.KernelExtension[shell] initialized ok
+Mon Jan 10 18:43:35 PST 2011: Extension org.neo4j.kernel.KernelExtension[kernel jmx] initialized ok
+Mon Jan 10 18:43:35 PST 2011: Extension org.neo4j.kernel.KernelExtension[kernel udc] initialized ok
+Mon Jan 10 18:43:35 PST 2011: Opened [/mnt/extra/Projects/javagraph/graphdb/index/lucene.log.1] clean empty log, version=0
+Mon Jan 10 18:43:35 PST 2011: Extension org.neo4j.graphdb.index.IndexProvider[lucene] initialized ok
+Mon Jan 10 18:43:35 PST 2011: TM new log: tm_tx_log.1
+Mon Jan 10 18:43:36 PST 2011: --- CONFIGURATION START ---
+Mon Jan 10 18:43:36 PST 2011: Physical mem: 8001MB, Heap size: 1779MB
+Mon Jan 10 18:43:36 PST 2011: Kernel version: Neo4j - Graph Database Kernel 1.2-1.2
+Mon Jan 10 18:43:36 PST 2011: Operating System: Linux; version: 2.6.35-23-generic; arch: amd64; cpus: 4
+Mon Jan 10 18:43:36 PST 2011: VM Name: Java HotSpot(TM) 64-Bit Server VM
+Mon Jan 10 18:43:36 PST 2011: VM Vendor: Sun Microsystems Inc.
+Mon Jan 10 18:43:36 PST 2011: VM Version: 17.1-b03
+Mon Jan 10 18:43:36 PST 2011: Boot Class Path: /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/resources.jar:/usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/rt.jar:/usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/jsse.jar:/usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/jce.jar:/usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/charsets.jar:/usr/lib/jvm/java-6-sun-1.6.0.22/jre/classes
+Mon Jan 10 18:43:36 PST 2011: Class Path: /home/keith/Projects/javagraph/bin/graph.jar:/home/keith/Projects/javagraph/lib/lucene-core-3.0.3.jar:/home/keith/Projects/javagraph/lib/postgresql-8.4-702.jdbc4.jar:/home/keith/Projects/javagraph/lib/neo4j/neo4j-ha-0.5-1.2.jar:/home/keith/Projects/javagraph/lib/neo4j/neo4j-index-1.2-1.2.jar:/home/keith/Projects/javagraph/lib/neo4j/neo4j-shell-1.2-1.2.jar:/home/keith/Projects/javagraph/lib/neo4j/protobuf-java-2.3.0.jar:/home/keith/Projects/javagraph/lib/neo4j/netty-3.2.1.Final.jar:/home/keith/Projects/javagraph/lib/neo4j/org.apache.servicemix.bundles.lucene-3.0.1_2.jar:/home/keith/Projects/javagraph/lib/neo4j/neo4j-examples-1.2.jar:/home/keith/Projects/javagraph/lib/neo4j/neo4j-management-1.2-1.2.jar:/home/keith/Projects/javagraph/lib/neo4j/neo4j-remote-graphdb-0.8-1.2.jar:/home/keith/Projects/javagraph/lib/neo4j/neo4j-kernel-1.2-1.2.jar:/home/keith/Projects/javagraph/lib/neo4j/neo4j-graph-algo-0.7-1.2.jar:/home/keith/Projects/javagraph/lib/neo4j/neo4j-udc-0.1-1.2-neo4j.jar:/home/keith/Projects/javagraph/lib/neo4j/neo4j-lucene-index-0.2-1.2.jar:/home/keith/Projects/javagraph/lib/neo4j/org.apache.servicemix.bundles.jline-0.9.94_1.jar:/home/keith/Projects/javagraph/lib/neo4j/geronimo-jta_1.1_spec-1.1.1.jar:/home/keith/Projects/javagraph/lib/neo4j/neo4j-online-backup-0.7-1.2.jar
+Mon Jan 10 18:43:36 PST 2011: Library Path: /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/amd64/server:/usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/amd64:/usr/lib/jvm/java-6-sun-1.6.0.22/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Mon Jan 10 18:43:36 PST 2011: Garbage Collector: PS Scavenge: [PS Eden Space, PS Survivor Space]
+Mon Jan 10 18:43:36 PST 2011: Garbage Collector: PS MarkSweep: [PS Eden Space, PS Survivor Space, PS Old Gen, PS Perm Gen]
+Mon Jan 10 18:43:36 PST 2011: VM Arguments: []
+Mon Jan 10 18:43:36 PST 2011: 
+Mon Jan 10 18:43:36 PST 2011: create=true
+Mon Jan 10 18:43:36 PST 2011: dir=graphdb/lucene-fulltext
+Mon Jan 10 18:43:36 PST 2011: logical_log=graphdb/nioneo_logical.log
+Mon Jan 10 18:43:36 PST 2011: neo_store=graphdb/neostore
+Mon Jan 10 18:43:36 PST 2011: neostore.nodestore.db.mapped_memory=20M
+Mon Jan 10 18:43:36 PST 2011: neostore.propertystore.db.arrays.mapped_memory=130M
+Mon Jan 10 18:43:36 PST 2011: neostore.propertystore.db.index.keys.mapped_memory=1M
+Mon Jan 10 18:43:36 PST 2011: neostore.propertystore.db.index.mapped_memory=1M
+Mon Jan 10 18:43:36 PST 2011: neostore.propertystore.db.mapped_memory=90M
+Mon Jan 10 18:43:36 PST 2011: neostore.propertystore.db.strings.mapped_memory=130M
+Mon Jan 10 18:43:36 PST 2011: neostore.relationshipstore.db.mapped_memory=100M
+Mon Jan 10 18:43:36 PST 2011: rebuild_idgenerators_fast=true
+Mon Jan 10 18:43:36 PST 2011: store_dir=graphdb
+Mon Jan 10 18:43:36 PST 2011: --- CONFIGURATION END ---
+Mon Jan 10 18:43:36 PST 2011: Extension org.neo4j.kernel.KernelExtension[shell] loaded ok
+Mon Jan 10 18:43:36 PST 2011: Extension org.neo4j.kernel.KernelExtension[kernel jmx] loaded ok
+Mon Jan 10 18:43:36 PST 2011: Extension org.neo4j.kernel.KernelExtension[kernel udc] loaded ok
+Mon Jan 10 18:43:36 PST 2011: Extension org.neo4j.graphdb.index.IndexProvider[lucene] loaded ok
