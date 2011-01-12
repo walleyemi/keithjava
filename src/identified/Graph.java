@@ -21,7 +21,7 @@ class Graph {
         
         DynamicDataStore store = new DynamicDataStore(persistenceDir,
                                                       0, 
-                                                      new MappedSegmentFactory());
+                                                      new ChannelSegmentFactory());
         
         _nodes = 
             new SerializableObjectStore<Integer, Node>(store, new IntSerializer(), new Node.Serializer());
