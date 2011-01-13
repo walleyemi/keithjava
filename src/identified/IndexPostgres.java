@@ -4,6 +4,9 @@ import java.sql.*;
 import java.util.*;
 import it.unimi.dsi.fastutil.ints.*;
 import java.io.File;
+import identified.utils.Time;
+import identified.lucene.*;
+import identified.graph.*;
 
 class IndexPostgres {
     public IndexPostgres(){}
@@ -42,7 +45,7 @@ class IndexPostgres {
             double start = Time.now();
             IntArrayList first_conns = first.connections(target);
             if(first_conns == null) continue;
-
+            
             IntArrayList second_conns = second.connections(first_conns);                    
 
             System.out.format("Calculated %d connections of %d in %f\n", second_conns.size(), target, Time.now() - start);

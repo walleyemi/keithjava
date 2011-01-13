@@ -1,4 +1,4 @@
-package identified;
+package identified.graph;
 
 import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.objects.*;
@@ -9,8 +9,10 @@ import krati.core.segment.*;
 import java.io.File;
 import identified.utils.IntSerializer;
 import java.util.*;
+import identified.utils.Time;
+import identified.graph.*;
 
-class Graph {
+public class Graph {
 
     private SerializableObjectStore<Integer, Node> _nodes;
 
@@ -37,7 +39,7 @@ class Graph {
         else return null;
     }
 
-    public IntArrayList connections(IntArrayList of){
+    public IntArrayList connections(IntArrayList of){        
         IntArrayList allConnections = new IntArrayList();
         for(int i: of){
             IntArrayList connections = this.connections(i);
@@ -104,9 +106,11 @@ class Graph {
         for(Map.Entry<Integer, Node> pair: pairs){
             _nodes.put(pair.getKey(), pair.getValue());
         }
-        _nodes.sync();
+        _nodes.persist();
         System.out.format("Wrote %d nodes in %f\n", pairs.size(), Time.now() - start);
         
         return true;   
     }
+    
+    public void sync() throws java.io.IOException {_nodes.sync();}
 }

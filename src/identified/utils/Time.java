@@ -1,6 +1,6 @@
-package identified;
+package identified.utils;
 
-class Time{
+public class Time{
     public static double now(){
         double time = System.currentTimeMillis();
         return time/1000.0;
