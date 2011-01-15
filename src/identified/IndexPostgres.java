@@ -34,9 +34,9 @@ class IndexPostgres {
         Connection conn = DriverManager.getConnection("jdbc:postgresql:spark_development?user=spark&password=spark");
 
         Statement statement = conn.createStatement();
-        first.loadFromSQL("Select candidate_id, friend_candidate_id from identified_buddies", statement);        
+        first.importSQL("Select candidate_id, friend_candidate_id from identified_buddies", statement);        
      
-        second.loadFromSQL("Select candidate_id, facebook_user_id from facebook_buddies", statement);
+        second.importSQL("Select candidate_id, facebook_user_id from facebook_buddies", statement);
 
         ArrayList<Double> times = new ArrayList<Double>();
 

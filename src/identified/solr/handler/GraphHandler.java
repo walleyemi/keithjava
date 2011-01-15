@@ -5,15 +5,24 @@ import org.apache.solr.handler.RequestHandlerBase;
 import org.apache.solr.request.SolrQueryRequest;
 import org.apache.solr.request.SolrQueryResponse;
 import org.apache.solr.util.NamedList;
+import org.apache.solr.util.plugin.SolrCoreAware;
 
-public class GraphHandler extends RequestHandlerBase {
+public class GraphHandler extends RequestHandlerBase implements SolrCoreAware {
     
     private Graph _graph;
+    private Connections _dbConn;
 
-    public GraphHandler(){}
+    public GraphHandler(){
+        _graph = null;
+        _dbConn = null;
+    }
 
     public void init(NamedList args){
         _graph = new Graph(new File("graph"));
+    }
+
+    void inform(SolrCore core) {
+
     }
 
     private boolean clean(){
@@ -21,7 +30,9 @@ public class GraphHandler extends RequestHandlerBase {
     }
 
     private boolean fullImport(){
-        return false;
+        _graph.clear();
+        _graph.importSQL();
+        
     }
 
     private boolean deltaImport(){

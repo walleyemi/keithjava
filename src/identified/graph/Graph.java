@@ -31,6 +31,10 @@ public class Graph {
 
     }
 
+    public boolean clear(){
+        _nodes.clear();
+    }
+
     public IntArrayList connections(int of){
         Node node = _nodes.get(Integer.valueOf(of));
         if(node != null){
@@ -76,7 +80,7 @@ public class Graph {
        Ex: Select id, friend_id from friends
      */
     
-    public boolean loadFromSQL(String sql, Statement statement)
+    public boolean importSQL(String sql, Statement statement)
         throws java.sql.SQLException, Exception
     {
         
