@@ -14,22 +14,38 @@
   <target name="compile" depends="init">
     <javac srcdir="${src}" 
            destdir="${build}"
-           classpath="${lib}/postgresql-8.4-702.jdbc4.jar:${lib}/lucene-core-3.0.3.jar:${lib}/neo4j/*"
            debug="true"
            debuglevel="lines,vars,source">
       <classpath>
         <fileset dir="${lib}"/>
       </classpath>
+      <compilerarg value="-Xlint"/>
     </javac>
   </target>
 
-  <target name="package" depends="compile">
+  <target name="package-graph-handler" depends="compile">
+    <jar destfile="${bin}/graph-handler.jar" basedir="${build}"/>
+  </target>
+
+  <target name="package-graph" depends="compile">
     <jar destfile="${bin}/graph.jar" basedir="${build}" manifest="${conf}/manifest"/>
   </target>
   
+  <target name="package" depends="package-graph-handler,package-graph"/>
+
   <target name="clean">
     <delete dir="${build}"/>
     <delete dir="${bin}/graph.jar"/>
+  </target>  
+
+  <target name="reload" depends="package-graph-handler">
+    <exec executable="sudo">
+      <arg value="/etc/init.d/jetty"/>
+      <arg value="restart"/>
+    </exec>
+    <exec executable="curl">
+      <arg value="localhost:8080/solr/graph?cmd=query&amp;query=universities:stanford"/>
+    </exec>
   </target>
 
 </project>

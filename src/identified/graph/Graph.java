@@ -17,22 +17,20 @@ public class Graph {
     private SerializableObjectStore<Integer, Node> _nodes;
 
 
-    public Graph(File persistenceDir)
+    public Graph(File persistenceDir)        
         throws java.lang.Exception
     {
-        
         DynamicDataStore store = new DynamicDataStore(persistenceDir,
                                                       0, 
                                                       new ChannelSegmentFactory());
         
         _nodes = 
-            new SerializableObjectStore<Integer, Node>(store, new IntSerializer(), new Node.Serializer());
-
-
+            new SerializableObjectStore<Integer, Node>(store, new IntSerializer(), new Node.Serializer());        
     }
 
-    public boolean clear(){
+    public boolean clear() throws java.io.IOException {
         _nodes.clear();
+        return true;
     }
 
     public IntArrayList connections(int of){
@@ -81,7 +79,7 @@ public class Graph {
      */
     
     public boolean importSQL(String sql, Statement statement)
-        throws java.sql.SQLException, Exception
+        throws java.sql.SQLException, GraphException
     {
         
         double start = Time.now();
@@ -106,13 +104,17 @@ public class Graph {
         
         System.out.println("Writing cache");
         start = Time.now();
-        ObjectSet<Map.Entry<Integer, Node>> pairs = nodes.entrySet();        
-        for(Map.Entry<Integer, Node> pair: pairs){
-            _nodes.put(pair.getKey(), pair.getValue());
+        try {
+            ObjectSet<Map.Entry<Integer, Node>> pairs = nodes.entrySet();        
+            for(Map.Entry<Integer, Node> pair: pairs){
+                _nodes.put(pair.getKey(), pair.getValue());
+            }
+            _nodes.persist();
+            System.out.format("Wrote %d nodes in %f\n", pairs.size(), Time.now() - start);
         }
-        _nodes.persist();
-        System.out.format("Wrote %d nodes in %f\n", pairs.size(), Time.now() - start);
-        
+        catch (Exception e){
+            throw new GraphException(String.format("Exception persisting graph nodes (%s)", e.getMessage()), e);
+        }
         return true;   
     }
     
